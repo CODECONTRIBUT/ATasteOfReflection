@@ -54,12 +54,11 @@ public class ReportModel
 
 
 
-    public byte[] GenerateReportWithReflection(int jobId)
+    public byte[] GenerateReportWithReflection()
     {
         try
         {
             //Get Tags for replacement in template
-            this.JobId = jobId;
             var tags = GetAllTagesFromTemplate();
 
             //Replace tags with C# Reflection
@@ -196,6 +195,9 @@ public class ReportModel
                 return;
 
             var attachmentId = JobModel.JobAttachmentId;
+            if (attachmentId == 0)
+                return;
+
             var attachmentModel = new AttachmentModel() { AttachmentId = attachmentId, JobId = this.JobId };
             switch (tag)
             {

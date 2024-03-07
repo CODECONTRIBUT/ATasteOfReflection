@@ -10,8 +10,8 @@ namespace ATasteOfReflection
     {
         static void Main(string[] args)
         {
-            var reportModel = new ReportModel(); 
-            reportModel.GenerateReportWithReflection(1234); //set JobId = 1234 here as an example
+            var reportModel = new ReportModel() { JobId = 1234 }; //set JobId = 1234 here as an example
+            reportModel.GenerateReportWithReflection(); 
             
             
         }
