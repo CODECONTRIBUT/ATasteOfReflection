@@ -80,9 +80,9 @@ public class ReportModel
 		{
             var Tags = new List<string>();
 
-            //Finds all the occurrences of formatted texts
-            var formattedTag = "";
-            TextSelection[] textSelections = ReportDoc.FindAll(formattedTag, false, true);
+            //Finds all the occurrences of Regex Expression, like "[JobId]"
+            var regexEx = @"\[(.*?)\]";
+            TextSelection[] textSelections = ReportDoc.FindAll(regexEx, false, true);
                 
             foreach (var textSelection in textSelections)
             {
