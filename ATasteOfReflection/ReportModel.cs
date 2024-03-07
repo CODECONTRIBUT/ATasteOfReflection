@@ -54,11 +54,11 @@ public class ReportModel
 
 
 
-    public void GenerateReportWithReflection(int jobId)
+    public byte[] GenerateReportWithReflection(int jobId)
     {
         try
         {
-            //Get Tags for replacement
+            //Get Tags for replacement in template
             this.JobId = jobId;
             var tags = GetAllTagesFromTemplate();
 
@@ -66,11 +66,12 @@ public class ReportModel
             GenerateReportAndReplaceTags(tags);
 
             //Save
-            SaveReport();
+            return SaveReport();
         }
         catch (Exception ex)
         {
             Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            return null;
         }
     }
 

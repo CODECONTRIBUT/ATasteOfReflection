@@ -18,7 +18,7 @@ namespace ATasteOfReflection
 
         public AttachmentModel() 
         {
-            using (var db = new DataContext())
+            using (var db = new ProdDataContext())
             {
                 if (AttachmentId == 0)
                     return;

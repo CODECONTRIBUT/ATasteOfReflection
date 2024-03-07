@@ -16,15 +16,15 @@ namespace ATasteOfReflection
 
         public int JobAttachmentId { get; set; }
 
-        private DataContext _db;
-        public DataContext db
+        private ProdDataContext _db;
+        public ProdDataContext db
         {
             get
             {
                 if (_db != null)
                     return _db;
 
-                _db = new DataContext();
+                _db = new ProdDataContext();
                 return _db;
             }
         }
