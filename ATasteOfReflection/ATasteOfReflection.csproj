@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttachmentModel.cs" />
+    <Compile Include="JobModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

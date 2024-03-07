@@ -10,7 +10,13 @@ namespace ATasteOfReflection
     {
         static void Main(string[] args)
         {
-            private int MyProperty { get; set; }
+            var reportModel = new ReportModel(); 
+            reportModel.GenerateReportWithReflection(1234); //set JobId = 1234 here as an example
+            
+            
         }
+          
     }
 }
+
+
