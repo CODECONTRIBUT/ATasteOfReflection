@@ -35,7 +35,7 @@ public class ReportModel
      }
 
     private JobModel _jobModel;
-    public ATasteOfReflection.JobModel JobModel
+    public JobModel JobModel
     { 
         get
         {
@@ -127,12 +127,14 @@ public class ReportModel
     {
         try
         {
-            var tagDictonary = new Dictionary<string, string>();
-            tagDictonary.Add("[JobId]", "ReplaceTagsWithJobModel");
-            tagDictonary.Add("[JobStatus]", "ReplaceTagsWithJobModel");
-            tagDictonary.Add("[JobManager]", "ReplaceTagsWithJobModel");
-            tagDictonary.Add("[AttachmentName]", "ReplaceTagsWithAttachmentModel");
-            tagDictonary.Add("[AttachmentPath]", "ReplaceTagsWithAttachmentModel");
+            var tagDictonary = new Dictionary<string, string>
+            {
+                {"[JobId]", "ReplaceTagsWithJobModel" },
+                {"[JobStatus]", "ReplaceTagsWithJobModel" },
+                {"[JobManager]", "ReplaceTagsWithJobModel" },
+                {"[AttachmentName]", "ReplaceTagsWithAttachmentModel" },
+                {"[AttachmentPath]", "ReplaceTagsWithAttachmentModel" }
+            };
             return tagDictonary;
         }
         catch (Exception ex)
